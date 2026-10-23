@@ -1,25 +1,71 @@
 aid: kace-com
+
 name: Kace
+
 description: 'Kace is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
   backed by norwest-venture-partners) and added to the network as a stub for full-pipeline profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/kace-com/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-23 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-22'
+
 modified: '2026-10-22'
+
 tags:
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- norwest-venture-partners
+
 common:
+- type: SecurityTxt
+  url: well-known/kace-com-status-security.txt
+- type: WellKnown
+  url: well-known/kace-com-well-known.yml
+- type: Hosts
+  url: hosts/kace-com-hosts.yml
+- type: Vendors
+  url: vendors/kace-com-vendors.yml
+- type: StatusPage
+  url: https://status.kace.com/
+- type: DomainSecurity
+  url: security/kace-com-domain-security.yml
 - type: Website
   url: https://kace.com
+
+apis: []
+
+x-backed-by:
+- norwest-venture-partners
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-10-23'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://status.kace.com/mcp
+    status: 403
+  - url: https://kace.com
+    status: 202
+x-enrichment:
+  date: '2026-10-23'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

@@ -1,0 +1,80 @@
+generated: '2026-10-23'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 6
+  own: 4
+  other_domain: 2
+  platform: 0
+  roles:
+  - api
+  - other
+  - status
+  - website
+hosts:
+- host: api.kace.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: kace.com
+  role: api
+  relation: own
+- host: api.quest.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: quest.com
+  role: api
+  relation: other-domain
+- host: changelog.kace.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: kace.com
+  role: other
+  relation: own
+- host: kace.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  serves:
+  - cdn
+  vendor: cloudfront
+  registrable_domain: kace.com
+  role: website
+  relation: own
+- host: status.kace.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - StatusPage
+  serves: []
+  registrable_domain: kace.com
+  role: status
+  relation: own
+- host: www.quest.com
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: quest.com
+  role: other
+  relation: other-domain
